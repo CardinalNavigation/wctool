@@ -8,15 +8,27 @@ def main():
     if arguments[0] == "-c":
         text_stats=os.stat(text_path)
         print(text_stats.st_size)
+
     elif arguments[0] == "-l":
         lines=0
         for text in full_text:
             if text=="\n":
                 lines= lines + 1
         print(lines)
+
     elif arguments[0] == "-w":
         words=full_text.split()
         print(len(words))
+
+    elif arguments[0] == "-m":
+        count=0
+        include_spaces=repr(full_text)
+        for item in include_spaces:
+            if item != "\n":
+                print(item)
+                count+=1
+        print(count)
+            
 
 def file_open(text_path):
     with open(text_path) as f:
