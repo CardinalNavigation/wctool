@@ -14,6 +14,9 @@ def main():
             if text=="\n":
                 lines= lines + 1
         print(lines)
+    elif arguments[0] == "-w":
+        words=full_text.split()
+        print(len(words))
 
 def file_open(text_path):
     with open(text_path) as f:
